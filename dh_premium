@@ -53,9 +53,9 @@ do -- Woodie watermark (compact combined pill + copy invite)
         return label;
     end
 
-    local woodieLabel = makePart(Instance.new("TextLabel"), "woodie", 13, 10, 56, Color3.fromRGB(255, 90, 90));
+    local woodieLabel = makePart(Instance.new("TextLabel"), "woodie.oo", 13, 10, 56, Color3.fromRGB(255, 90, 90));
     local sepLabel = makePart(Instance.new("TextLabel"), "|", 12, 66, 12, Color3.fromRGB(160, 90, 100));
-    local inviteLabel = makePart(Instance.new("TextLabel"), "discord.gg/wjj2S5zA9Z", 12, 80, 140, Color3.fromRGB(255, 255, 255));
+    local inviteLabel = makePart(Instance.new("TextLabel"), "https://discord.gg/RH4Nbd8sRW", 12, 80, 140, Color3.fromRGB(135, 206, 235));
 
     -- the whole pill is clickable to copy the invite
     local clickOverlay = Instance.new("TextButton");
