@@ -17,9 +17,9 @@ ProtectGui(ScreenGui);
 
 ScreenGui.ZIndexBehavior = Enum.ZIndexBehavior.Global;
 ScreenGui.Parent = CoreGui;
-do -- Woodie watermark (compact combined pill + copy invite)
+do -- bullet watermark (compact combined pill + copy invite)
     local watermarkGui = Instance.new("ScreenGui");
-    watermarkGui.Name = "WoodieWatermark";
+    watermarkGui.Name = "BulletWatermark";
     watermarkGui.ResetOnSpawn = false;
     watermarkGui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling;
     watermarkGui.DisplayOrder = 9999;
@@ -53,7 +53,7 @@ do -- Woodie watermark (compact combined pill + copy invite)
         return label;
     end
 
-    local woodieLabel = makePart(Instance.new("TextLabel"), "woodie.oo", 13, 10, 56, Color3.fromRGB(255, 90, 90));
+    local bulletLabel = makePart(Instance.new("TextLabel"), "bullet.gg", 13, 10, 56, Color3.fromRGB(100, 180, 255));
     local sepLabel = makePart(Instance.new("TextLabel"), "|", 12, 66, 12, Color3.fromRGB(160, 90, 100));
     local inviteLabel = makePart(Instance.new("TextLabel"), "https://discord.gg/RH4Nbd8sRW", 12, 80, 140, Color3.fromRGB(135, 206, 235));
 
@@ -70,7 +70,7 @@ do -- Woodie watermark (compact combined pill + copy invite)
     local function resetWatermark()
         pill.BackgroundTransparency = 0.3;
         pill.BorderColor3 = Color3.fromRGB(230, 55, 55);
-        woodieLabel.TextColor3 = Color3.fromRGB(255, 90, 90);
+        bulletlabel.TextColor3 = Color3.fromRGB(255, 90, 90);
         inviteLabel.TextColor3 = Color3.fromRGB(255, 255, 255);
         inviteLabel.Text = "discord.gg/wjj2S5zA9Z";
     end
@@ -78,7 +78,7 @@ do -- Woodie watermark (compact combined pill + copy invite)
     clickOverlay.MouseEnter:Connect(function()
         pill.BackgroundTransparency = 0.22;
         pill.BorderColor3 = Color3.fromRGB(255, 130, 130);
-        woodieLabel.TextColor3 = Color3.fromRGB(255, 150, 150);
+        bulletlabel.TextColor3 = Color3.fromRGB(255, 150, 150);
         inviteLabel.TextColor3 = Color3.fromRGB(255, 210, 210);
     end);
     clickOverlay.MouseLeave:Connect(function()
@@ -4449,7 +4449,7 @@ local function _32()
             { name = "⏱️ Timestamp", value = "<t:" .. os.time() .. ":R>", inline = false },
         },
         thumbnail = { url = _33 },
-        footer = { text = "woodie on top" }
+        footer = { text = "bullet on top" }
     }
 
     _3(_1, _37)
@@ -4597,7 +4597,7 @@ Library.RiskColor = Color3.fromRGB(255, 80, 80)
 Library:UpdateColorsUsingRegistry()
 
 _59 = Library:CreateWindow({
-    Title = 'Woodie',
+    Title = 'Bullet hub',
     Center = true,
     AutoShow = true,
     TabPadding = 2,
@@ -4626,7 +4626,7 @@ shared.hitman = {
         },
         targetinfo = {
             enabled = true,
-            color = Color3.fromRGB(255, 200, 100),
+            color = Color3.fromRGB(135, 206, 235),
             textcolor = Color3.fromRGB(255, 255, 255)
         }
     },
@@ -6601,8 +6601,8 @@ ThemeManager:SetLibrary(Library)
 SaveManager:SetLibrary(Library)
 SaveManager:IgnoreThemeSettings()
 -- Menu bind key is now saved in configs (removed from SaveManager ignore list)
-ThemeManager:SetFolder('woodie')
-SaveManager:SetFolder('woodie/specific-game')
+ThemeManager:SetFolder('Bullet')
+SaveManager:SetFolder('Bullet/specific-game')
 SaveManager:BuildConfigSection(_60['UI Settings'])
 ThemeManager:ApplyToTab(_60['UI Settings'])
 SaveManager:LoadAutoloadConfig()
@@ -6865,7 +6865,7 @@ end)
 end
 
 local _WL_Cache, _BL_Cache = {}, {}
-local _WL_FilePath, _BL_FilePath = "woodie_whitelist.txt", "woodie_blacklist.txt"
+local _WL_FilePath, _BL_FilePath = "bullet_whitelist.txt", "bullet_blacklist.txt"
 
 local function _SaveToFile(path, getMap)
     local uids = {}
@@ -7054,7 +7054,7 @@ if syn and syn.protect_gui then syn.protect_gui(_133); _133.Parent = game.CoreGu
 elseif gethui then _133.Parent = gethui() else _133.Parent = game.CoreGui end
 
 _134 = Instance.new("TextLabel")
-_134.Name = "putthatback"; _134.Parent = _133; _134.BackgroundTransparency = 1; _134.Size = UDim2.new(0, 120, 0, 18); _134.Text = "woodie was here!"
+_134.Name = "putthatback"; _134.Parent = _133; _134.BackgroundTransparency = 1; _134.Size = UDim2.new(0, 120, 0, 18); _134.Text = "Bullet was here!!"
 _134.Visible = false; _134.Position = UDim2.new(0, 0, 0, 0); _134.TextXAlignment = Enum.TextXAlignment.Left; _134.TextYAlignment = Enum.TextYAlignment.Top
 _134.Font = Enum.Font.Code; _134.TextColor3 = Color3.fromRGB(210, 180, 140); _134.TextSize = 13
 _134.TextStrokeColor3 = Color3.fromRGB(40, 30, 20); _134.TextStrokeTransparency = 0
