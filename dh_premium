@@ -1,3 +1,4 @@
+
 local InputService = game:GetService('UserInputService');
 local TextService = game:GetService('TextService');
 local CoreGui = game:GetService('CoreGui');
@@ -16,9 +17,9 @@ ProtectGui(ScreenGui);
 
 ScreenGui.ZIndexBehavior = Enum.ZIndexBehavior.Global;
 ScreenGui.Parent = CoreGui;
-do -- Woodie.oo watermark (compact combined pill + copy invite)
+do -- Woodie watermark (compact combined pill + copy invite)
     local watermarkGui = Instance.new("ScreenGui");
-    watermarkGui.Name = "Woodie.ooWatermark";
+    watermarkGui.Name = "WoodieWatermark";
     watermarkGui.ResetOnSpawn = false;
     watermarkGui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling;
     watermarkGui.DisplayOrder = 9999;
@@ -28,10 +29,10 @@ do -- Woodie.oo watermark (compact combined pill + copy invite)
     local inviteLink = "https://discord.gg/RH4Nbd8sRW";
 
     local pill = Instance.new("Frame");
-    pill.BackgroundColor3 = Color3.fromRGB(135, 206, 235);
+    pill.BackgroundColor3 = Color3.fromRGB(44, 10, 14);
     pill.BackgroundTransparency = 0.3;
     pill.BorderSizePixel = 1;
-    pill.BorderColor3 = Color3.fromRGB(135, 210, 235);
+    pill.BorderColor3 = Color3.fromRGB(230, 55, 55);
     pill.Size = UDim2.new(0, 232, 0, 20);
     pill.Position = UDim2.new(1, -238, 0, 0);
     pill.Parent = watermarkGui;
@@ -53,8 +54,8 @@ do -- Woodie.oo watermark (compact combined pill + copy invite)
     end
 
     local woodieLabel = makePart(Instance.new("TextLabel"), "woodie", 13, 10, 56, Color3.fromRGB(255, 90, 90));
-    local sepLabel = makePart(Instance.new("TextLabel"), "|", 12, 66, 12, 22222222Color3.fromRGB(160, 90, 100));
-    local inviteLabel = makePart(Instance.new("TextLabel"), "https://discord.gg/RH4Nbd8sRW", 12, 80, 140, Color3.fromRGB(255, 255, 255));
+    local sepLabel = makePart(Instance.new("TextLabel"), "|", 12, 66, 12, Color3.fromRGB(160, 90, 100));
+    local inviteLabel = makePart(Instance.new("TextLabel"), "discord.gg/wjj2S5zA9Z", 12, 80, 140, Color3.fromRGB(255, 255, 255));
 
     -- the whole pill is clickable to copy the invite
     local clickOverlay = Instance.new("TextButton");
@@ -68,8 +69,8 @@ do -- Woodie.oo watermark (compact combined pill + copy invite)
 
     local function resetWatermark()
         pill.BackgroundTransparency = 0.3;
-        pill.BorderColor3 = Color3.fromRGB(135, 206, 235);
-        woodieLabel.TextColor3 = Color3.fromRGB(0, 128, 128);
+        pill.BorderColor3 = Color3.fromRGB(230, 55, 55);
+        woodieLabel.TextColor3 = Color3.fromRGB(255, 90, 90);
         inviteLabel.TextColor3 = Color3.fromRGB(255, 255, 255);
         inviteLabel.Text = "discord.gg/wjj2S5zA9Z";
     end
@@ -135,7 +136,7 @@ local Library = {
 
     HudRegistry = {};
 
-    FontColor = Color3.fromRGB(255, 255, 255);
+    FontColor = Color3.fromRGB(135, 206, 235);
     MainColor = Color3.fromRGB(28, 28, 28);
     BackgroundColor = Color3.fromRGB(20, 20, 20);
     AccentColor = Color3.fromRGB(0, 85, 255);
@@ -10843,11 +10844,12 @@ local _CC_groupIds = {
                     if type(item) == "table" and type(item.user) == "table" then
                         local u = item.user
                         local name = type(u.username) == "string" and u.username or nil
-                        local uid = tonumber(u.userId)33
-                        if name and name ~= "" then3
-                            local lowerName = string.lower(name)3
-                            if lowerName ~= me3
-                                and lowerName ~= string.lower(_CC_lastName or "")3
+                        local uid = tonumber(u.userId)
+                        if name and name ~= "" then
+                            local lowerName = string.lower(name)
+                            if lowerName ~= me
+                                and lowerName ~= string.lower(_CC_lastName or "")
+                                and not _CC_used[lowerName] then
                                 local dup = false
                                 for _, ex in ipairs(_CC_apiPool) do
                                     if string.lower(ex.name) == lowerName then
